@@ -1,40 +1,30 @@
-pipeline {
+stages {
 
-    agent any
-
-    stages {
-
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Clean') {
-            steps {
-                bat 'mvn clean'
-            }
-        }
-
-        stage('Run Smoke Test') {
-            steps {
-                bat 'mvn test -Dtest=SmokeTestRunner'
-            }
+    stage('Checkout') {
+        steps {
+            checkout scm
         }
     }
 
-    post {
-
-        always {
-            echo 'Automation execution completed.'
+    stage('Clean') {
+        steps {
+            bat 'mvn clean'
         }
+    }
 
-        success {
-            echo 'Smoke Test PASSED - @TC_LOGIN_002'
-        }
+    stage('Run Smoke Test') {
+        steps {
+            bat 'mvn clean test-compile'
 
-        failure {
-            echo 'Smoke Test FAILED - @TC_LOGIN_002'
+            bat '''
+                echo ===== CHECK RUNNER SOURCE =====
+                dir src\\test\\java\\com\\tutorialsninja\\runners
+
+                echo ===== CHECK RUNNER CLASS =====
+                dir target\\test-classes\\com\\tutorialsninja\\runners
+            '''
+
+            bat 'mvn test -Dtest=SmokeTestRunner'
         }
     }
 }
