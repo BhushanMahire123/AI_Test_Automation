@@ -1,0 +1,18 @@
+{
+  "valid_user": {
+    "email": "test@gmail.com",
+    "password": "Test@1234"
+  },
+  "invalid_user": {
+    "email": "invalid@test.com",
+    "password": "wrongpass"
+  },
+  "new_user": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "johndoe12345@test.com",
+    "telephone": "9876543210",
+    "password": "Test@1234",
+    "confirmPassword": "Test@1234"
+  }
+}
