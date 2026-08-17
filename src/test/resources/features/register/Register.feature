@@ -81,4 +81,4 @@ Examples:
 
 Examples:
 | firstName | lastName | email                 | telephone  | password   | confirmPassword |
-| John      | Doe      | test@gmail.com        | 9876543210 | Test@1234  | Test@1234       |
+| John      | Doe      | test@gmail.com        | 9876543210 | Test@1239  | Test@1239       |

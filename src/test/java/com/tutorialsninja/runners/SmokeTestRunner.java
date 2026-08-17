@@ -17,7 +17,7 @@ import org.testng.annotations.DataProvider;
         "junit:target/cucumber-reports/report.xml"
     },
     monochrome = true,
-    tags       = "@TC_LOGIN_002"
+    tags       = "@TC_REG_008"
 )
 public class SmokeTestRunner extends AbstractTestNGCucumberTests {
 
